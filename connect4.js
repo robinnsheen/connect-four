@@ -90,8 +90,8 @@ function placeInTable(y, x) {
   // make element, assign class p1/p2,
   // put into correct cell using id (y,x)
   const piece = document.createElement("div");
-  piece.setAttribute("data-attribute", "piece");
-  piece.setAttribute("class", `p${currPlayer}`);
+  piece.setAttribute("class", "piece");
+  piece.classList.add(`p${currPlayer}`);
   console.log("piece: ", piece);
   //get the correct cell, using getElementID
   //append child to correct cell.
