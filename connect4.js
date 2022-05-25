@@ -116,6 +116,7 @@ function handleClick(evt) {
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
   if (y === null) {
+    console.log("we made it here!");
     return board[y][x] = currPlayer;
   }
 
