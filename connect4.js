@@ -116,10 +116,9 @@ function handleClick(evt) {
   // get next spot in column (if none, ignore click)
   const y = findSpotForCol(x);
   if (y === null) {
-    console.log("we made it here!");
     return board[y][x] = currPlayer;
   }
-
+  
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
   placeInTable(y, x);
