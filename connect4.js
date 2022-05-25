@@ -122,6 +122,14 @@ function handleClick(evt) {
   // place piece in board and add to HTML table
   // TODO: add line to update in-memory board
   board[y][x] = currPlayer;
+  //is entire board filled
+  // for loop through the board, of row
+  // row.every
+
+  for (let row of board) {
+    console.log("is filled: ", row.every(cell => cell !== null));
+  }
+
   placeInTable(y, x);
 
   // check for win
