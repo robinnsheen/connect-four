@@ -86,6 +86,19 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
+  // make a div inside correct td cell of html game board
+  // make element, assign class p1/p2,
+  // put into correct cell using id (y,x)
+  const piece = document.createElement("div");
+  piece.setAttribute("data-attribute", "piece");
+  piece.setAttribute("class", `p${currPlayer}`);
+  console.log("piece: ", piece);
+  //get the correct cell, using getElementID
+  //append child to correct cell.
+  const cell = document.getElementById(`${y}-${x}`);
+  console.log("cell: ", cell);
+  cell.appendChild(piece);
+
 }
 
 /** endGame: announce game end */
