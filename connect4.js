@@ -130,6 +130,9 @@ function handleClick(evt) {
     console.log("is filled: ", row.every(cell => cell !== null));
   }
 
+  currPlayer = (currPlayer === 1) ? 2 : 1;
+  console.log("next player:", currPlayer);
+
   placeInTable(y, x);
 
   // check for win
