@@ -179,19 +179,27 @@ function checkForWin() {
     let winnerY = cells[0][0];
     // make loop to generate diff coordinates
     let winner = board[winnerY][winnerX];
+    console.log("winner: ", winner);
     if (winner === null){
       return false;
-    } else {
-      // looping through cells
+    }
+
+    // looping through cells
       for (let i = 1; i < cells.length; i++){
         // if value of the board found at cells[i] coordinates
         let x = cells[i][1];
         let y = cells[i][0];
+        if ( y > HEIGHT || y<0 || x > WIDTH || x<0 ) {
+          return false;
+        }
+        console.log("board cell: ", board[y][x]);
+        console.log("loop x:", x);
+        console.log("loop y:", y);
         if (board[y][x] !== winner) {
           return false;
         }
       }
-    }
+
 
     return true;
   }
