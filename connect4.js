@@ -173,12 +173,21 @@ function checkForWin() {
     // store which player is the first cell
     // if following cells are different player, not a win
     // otherwise keep looping
-    let winner = cells[0];
-    if (cells[0] === null){
+    // cells at 0 check value at board
+    // we need value of cells at x y, check board values of x y
+    let winnerX = cells[0][1];
+    let winnerY = cells[0][0];
+    // make loop to generate diff coordinates
+    let winner = board[winnerY][winnerX];
+    if (winner === null){
       return false;
     } else {
+      // looping through cells
       for (let i = 1; i < cells.length; i++){
-        if (cells[i] !== winner) {
+        // if value of the board found at cells[i] coordinates
+        let x = cells[i][1];
+        let y = cells[i][0];
+        if (board[y][x] !== winner) {
           return false;
         }
       }
