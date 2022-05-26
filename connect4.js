@@ -113,7 +113,7 @@ function placeInTable(y, x) {
 /** endGame: announce game end */
 
 function endGame(msg) {
-  // TODO: pop up alert message
+  alert(msg);
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -189,7 +189,7 @@ function checkForWin() {
         // if value of the board found at cells[i] coordinates
         let x = cells[i][1];
         let y = cells[i][0];
-        if ( y > HEIGHT || y<0 || x > WIDTH || x<0 ) {
+        if ( y >= HEIGHT || y<0 || x >= WIDTH || x<0 ) {
           return false;
         }
         console.log("board cell: ", board[y][x]);
