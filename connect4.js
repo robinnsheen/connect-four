@@ -167,9 +167,24 @@ function checkForWin() {
    */
   function _win(cells) {
 
-    // TODO: Check four cells to see if they're all legal & all color of current
+    // TODO: Check four cells to see if they're all legal & all color (p1/p2) of current
     // player
-
+    // check array of array, if all same player, a win
+    // store which player is the first cell
+    // if following cells are different player, not a win
+    // otherwise keep looping
+    let winner = cells[0];
+    if (cells[0] === null){
+      return false;
+    } else {
+      for (let i = 1; i < cells.length; i++){
+        if (cells[i] !== winner) {
+          return false;
+        }
+      }
+    }
+    
+    return true;
   }
 
   // using HEIGHT and WIDTH, generate "check list" of coordinates
